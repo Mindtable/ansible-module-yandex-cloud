@@ -688,6 +688,7 @@ class YccVM(YC):
         metadata = spec.get("metadata")
         labels = spec.get("labels")
         security_groups = spec.get("security_groups")
+        service_account_id = spec.get("service_account_id")
         disk_name = spec.get("disk_name")  # CST-965: added disk_name parameter to boot disk for Grafana dashboards
 
         if snapshot_id:
@@ -722,6 +723,9 @@ class YccVM(YC):
             params["metadata"] = metadata
         if labels:
             params["labels"] = labels
+
+        if service_account_id:
+            params["service_account_id"] = service_account_id
 
         if login and public_ssh_key:
             params["metadata"] = {
