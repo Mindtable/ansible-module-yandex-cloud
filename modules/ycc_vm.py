@@ -379,6 +379,7 @@ def vm_argument_spec():
         disk_type=dict(choices=DISK_TYPES, required=False, default="hdd"),
         disk_size=dict(type="int", required=False, default=10),
         disk_name=dict(type="str", required=False),
+        service_account_id=dict(type="str", required=False),
         secondary_disks_spec=dict(type="list", required=False),
         subnet_id=dict(type="str", required=False),
         secondary_subnet_id=dict(type="str", required=False),
